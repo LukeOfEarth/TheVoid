@@ -1,9 +1,9 @@
 const socket = io();
 
 const mainSection = document.querySelector('.main');
-const submitBtn = document.querySelector('.submit');
+const messageForm = document.querySelector('.message-form');
 
-submitBtn.addEventListener('click', (e) => {
+messageForm.addEventListener('submit', (e) => {
     sendMessage(e);
 });
 
@@ -15,10 +15,12 @@ const createMessage = (message) => {
     let messageDiv = document.createElement('DIV');
     messageDiv.innerHTML = message;
     mainSection.appendChild(messageDiv);
-    setTimeout(() => messageDiv.remove(),3000);
+    setTimeout(() => messageDiv.remove(), 3000);
 }
 
 const sendMessage = (e) => {
     e.preventDefault();
-    socket.emit('message-sent','some message');
+    const message = e.target.elements.messageInput.value;
+    socket.emit('message-sent', message);
+    e.target.elements.messageInput.value = '';
 }
