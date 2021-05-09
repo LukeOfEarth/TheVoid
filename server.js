@@ -11,6 +11,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', socket => {
     console.log('New connection...');
+
+    socket.emit('message-received','You have connected!');
+
+    socket.on('message-sent', (message) => {
+        console.log(message);
+    });
 });
 
 const PORT = 3000 || process.env.PORT;
