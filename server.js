@@ -12,13 +12,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 io.on('connection', socket => {
     console.log('New connection...');
 
-    socket.emit('message-received','You have connected!');
+    socket.emit('connect-received','You have connected!');
 
     socket.on('message-sent', (message) => {
-        socket.emit('message-received', message);
-        socket.broadcast.emit('message-received', message);
+        const pos = getRandomPositions();
+
+        const payload = {
+            messageText: message,
+            positions: pos
+        }
+
+        socket.emit('message-received', payload);
+        socket.broadcast.emit('message-received', payload);
     });
 });
+
+const getRandomPositions = () => {
+    const x = Math.floor(Math.random(0,100)*100);
+    const y = Math.floor(Math.random(0,100)*100);
+    return {
+        posX: x, 
+        posY: y
+    };
+}
 
 const PORT = process.env.PORT ?? 3000;
 

@@ -1,6 +1,7 @@
 * {
   background-color: var(--background-color);
   font-family: var(--primary-font);
+  color: var(--foreground-color);
 }
 
 img {
@@ -13,11 +14,10 @@ h1 {
   text-align: center;
   font-weight: bold;
   font-size: 3rem;
-  color: var(--foreground-color);
+  margin-bottom: 5px;
 }
 
 label {
-  color: var(--foreground-color);
   font-size: 1.5rem;
   margin-left: 5%;
 }
@@ -25,7 +25,6 @@ label {
 input {
   height: 62px;
   border: 2px solid var(--foreground-color);
-  color: var(--foreground-color);
   width: 80%;
 }
 
@@ -36,7 +35,8 @@ button {
 }
 
 div {
-  color: var(--foreground-color);
+  position: absolute;
+  font-size: 2rem;
 }
 
 form {
@@ -48,4 +48,20 @@ form {
   display: flex;
   margin: 10px auto 0 auto;
   justify-content: center;
+}
+
+#connection {
+  text-align: center;
+  margin-top: 0;
+}
+
+.main {
+  position: relative;
+  min-height: 70vh;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 400px;
+  }
 }
