@@ -15,7 +15,8 @@ io.on('connection', socket => {
     socket.emit('message-received','You have connected!');
 
     socket.on('message-sent', (message) => {
-        console.log(message);
+        socket.emit('message-received', message);
+        socket.broadcast.emit('message-received', message);
     });
 });
 
