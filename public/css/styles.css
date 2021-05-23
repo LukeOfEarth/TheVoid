@@ -19,7 +19,7 @@ h1 {
 
 label {
   font-size: 1.5rem;
-  margin-left: 5%;
+  margin-left: 7%;
 }
 
 input {
@@ -37,6 +37,10 @@ button {
 div {
   position: absolute;
   font-size: 2rem;
+  animation: void-text 5s linear;
+  color: transparent;
+  text-shadow: 0 0 0 rgba(255, 255, 255, 1);
+  max-width: 1000px;
 }
 
 form {
@@ -63,5 +67,18 @@ form {
 @media (max-width: 600px) {
   h1 {
     font-size: 400px;
+  }
+}
+
+@keyframes void-text {
+  0% {
+    transform: scale(1, 1) translateY(0px);
+    opacity: 1;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 1);
+  }
+  100% {
+    transform: scale(0.01, 0.01) translateY(-200px);
+    opacity: 0;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
   }
 }

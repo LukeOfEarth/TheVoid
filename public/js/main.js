@@ -22,7 +22,7 @@ const createMessage = (payload) => {
     let messageDiv = document.createElement('div');
     messageDiv.style.top = `${payload.positions.posY}%`
     messageDiv.style.left = `${payload.positions.posX}%`
-    messageDiv.innerHTML = payload.messageText;
+    messageDiv.innerHTML = `<p>${payload.messageText}</p>`;
     mainSection.appendChild(messageDiv);
     setTimeout(() => messageDiv.remove(), 5000);
 }
