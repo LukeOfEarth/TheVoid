@@ -18,7 +18,6 @@ socket.on('connect-received', () => {
 });
 
 const createMessage = (payload) => {
-    console.log(payload);
     let messageDiv = document.createElement('div');
     messageDiv.style.top = `${payload.positions.posY}%`
     messageDiv.style.left = `${payload.positions.posX}%`
