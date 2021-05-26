@@ -28,8 +28,8 @@ io.on('connection', socket => {
 });
 
 const getRandomPositions = () => {
-    const x = Math.floor(Math.random(0,100)*70);
-    const y = Math.floor(Math.random(0,100)*70);
+    const x = Math.floor(Math.random(0,100)*90);
+    const y = Math.floor(Math.random(0,100)*90);
     return {
         posX: x, 
         posY: y

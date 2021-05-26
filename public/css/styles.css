@@ -38,6 +38,7 @@ div {
   position: absolute;
   font-size: 2rem;
   animation: void-text 5s linear;
+  background-color: transparent;
   color: transparent;
   text-shadow: 0 0 0 rgba(255, 255, 255, 1);
   max-width: 1000px;
@@ -62,6 +63,11 @@ form {
 .main {
   position: relative;
   min-height: 70vh;
+}
+
+p {
+  background-color: transparent;
+  color: transparent;
 }
 
 @media (max-width: 600px) {
