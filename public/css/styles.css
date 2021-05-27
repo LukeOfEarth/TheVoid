@@ -26,6 +26,7 @@ input {
   height: 62px;
   border: 2px solid var(--foreground-color);
   width: 80%;
+  font-size: 32px;
 }
 
 button {
